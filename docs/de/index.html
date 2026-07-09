@@ -34,7 +34,7 @@ Sie verbindet sich direkt mit dem WLAN der Kamera; kein Konto, keine Cloud.</p>
 
 <h2>Support</h2>
 <p>Du brauchst Hilfe, hast einen Fehler gefunden oder eine Frage? Schreib an
-<a href="mailto:alex@bartok.de">alex@bartok.de</a>, ich melde mich.</p>
+<a class="eml" href="#" data-u="alex" data-d="bartok.de">alex&#8203;[at]&#8203;bartok.de</a>, ich melde mich.</p>
 
 <h2>Was CamCompanion kann</h2>
 <ul>
@@ -80,5 +80,12 @@ Unterstützung oder offizielle Beziehung. &bdquo;Mercedes-Benz&ldquo; und
 &bdquo;MB Dashcam&ldquo; sind Marken ihrer jeweiligen Inhaber und werden ausschließlich
 zur Beschreibung der Kompatibilität verwendet.
 </footer>
+<script>
+/* Assemble the contact address client-side so it never appears in the HTML source. */
+document.querySelectorAll(".eml").forEach(function (a) {
+  var m = a.dataset.u + "@" + a.dataset.d;
+  a.href = "mailto:" + m; a.textContent = m;
+});
+</script>
 </body>
 </html>

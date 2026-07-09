@@ -85,7 +85,7 @@ children.</p>
 updated" date.</p>
 
 <h2>Contact</h2>
-<p>Questions about this policy: <a href="mailto:alex@bartok.de">alex@bartok.de</a></p>
+<p>Questions about this policy: <a class="eml" href="#" data-u="alex" data-d="bartok.de">alex&#8203;[at]&#8203;bartok.de</a></p>
 
 <footer>
 CamCompanion is an independent project and is not affiliated with, authorized, endorsed
@@ -93,5 +93,12 @@ by, or officially connected to Mercedes-Benz Group AG. &ldquo;Mercedes-Benz&rdqu
 &ldquo;MB Dashcam&rdquo; are trademarks of their respective owner and are used solely to
 describe compatibility.
 </footer>
+<script>
+/* Assemble the contact address client-side so it never appears in the HTML source. */
+document.querySelectorAll(".eml").forEach(function (a) {
+  var m = a.dataset.u + "@" + a.dataset.d;
+  a.href = "mailto:" + m; a.textContent = m;
+});
+</script>
 </body>
 </html>
